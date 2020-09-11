@@ -1,28 +1,61 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" :class="darkMode ? `night` : ``">
+    <SelectMode />
+    <LiveTitle/>
+    <CountAttendees/>
+    <InputPerson/>
+    <PikachuPerson/>
+    <PeopleList/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SelectMode from './components/SelectMode.vue'
+import LiveTitle from './components/LiveTitle.vue'
+import CountAttendees from './components/CountAttendees.vue'
+import InputPerson from './components/InputPerson.vue'
+import PikachuPerson from './components/PikachuPerson.vue'
+import PeopleList from './components/PeopleList.vue'
+
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SelectMode,
+    LiveTitle,
+    InputPerson,
+    CountAttendees,
+    PikachuPerson,
+    PeopleList,
+  },
+  computed: {
+    ...mapState(['darkMode'])
+  },
+  mounted() {
+    this.$store.dispatch('GET_USERS')
+  },
+  created() {
+
+  },
+  data() {
+    return {
+
+    }
   }
 }
 </script>
 
 <style>
+body {
+  height: 100%;
+  margin: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 20px;
+}
+.night {
+  background-color: #000;
+  color: #FFF;
 }
 </style>
