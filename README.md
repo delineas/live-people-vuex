@@ -4,7 +4,7 @@ WebApp para gestionar un listado de personas y saber si Pikachu está entre ella
 
 La excusa perfecta para aprender Vuex y hacer saltar tus webapps con Vue a otro nivel.
 
-Muy pronto resuelto en vídeo en: https://premium.danielprimo.io
+Este es el código del curso **Introducción a Vuex** https://premium.danielprimo.io/cursos/introduccion-a-vuex
 
 ## Tecnología
 
